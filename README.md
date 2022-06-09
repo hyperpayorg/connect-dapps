@@ -1,10 +1,10 @@
 # Introduction
-This doc will show how to connect the Dapps in HyperPay wallet.
+This doc will show how to connect the DApps in HyperPay wallet.
 
 # DApp Development
 ## How To Show HyperPay Wallet
-  If DAPP wants to show HyperPay wallet info in DAppBrowser. There are several ways to do.
-  1. If DAPP uses [web3-onboard](https://github.com/blocknative/web3-onboard) to integrate the wallet, nothing needs to be done. Hyperpay DappBrowser can directly display relevant wallet information, as shown in the following picture:
+  If DApp wants to show HyperPay wallet info in DAppBrowser. There are several ways to do.
+  1. If DApp uses [web3-onboard](https://github.com/blocknative/web3-onboard) to integrate the wallet, nothing needs to be done. Hyperpay DAppBrowser can directly display relevant wallet information, as shown in the following picture:
   ![Web3 Onborad Demo](assets/16547625247238.jpg)
  web3-onboard supports wallets:
   ```js
@@ -40,7 +40,7 @@ This doc will show how to connect the Dapps in HyperPay wallet.
 }
 ```
   
-  2.  If DAPP wants to display HyperPay  directly. We can provide wallet logo, etc.   
+ 2.  If DApp wants to display HyperPay  directly. We can provide wallet logo, etc.   
 ## How To Connect Wallet 
 ### EVM(Ethereum) Connect
 The Metamask protocol is a universal wallet connection scheme for Ethereum or EVM chains. HyperPay complies with the Metamask protocol by default, and will implant window.ethereum object in the webview. Developers can directly develop follow [MetaMask Documents](https://docs.metamask.io/guide/ethereum-provider.html).
@@ -59,7 +59,7 @@ The Metamask protocol is a universal wallet connection scheme for Ethereum or EV
     
 })();
 ```
-# DappBrowser Methods Supports
+# DAppBrowser Methods Supports
 
 ```swift
 enum DAppMethod: String, Decodable, CaseIterable {
