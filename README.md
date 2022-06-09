@@ -78,7 +78,7 @@ enum DAppMethod: String, Decodable, CaseIterable {
 
 [website](https://www.hyperpay.tech/)
 
+[logo image](assets/WechatIMG24.png)
 
-[logo image]()
 
 etc.
