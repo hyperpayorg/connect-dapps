@@ -59,8 +59,9 @@ The Metamask protocol is a universal wallet connection scheme for Ethereum or EV
     
 })();
 ```
-# DAppBrowser Methods Supports
+### EVM DAppBrowser Methods Supports
 
+#
 ```swift
 enum DAppMethod: String, Decodable, CaseIterable {
     case signTransaction
@@ -74,6 +75,66 @@ enum DAppMethod: String, Decodable, CaseIterable {
     case switchEthereumChain
 }
 ```
+## Solana DApp Connect 
+You can also refer to [solana-web3](https://solana-labs.github.io/solana-web3.js).
+### IsInstalled
+```js
+    const isHyperPayInstalled = window.isHyperPay && window.hyperPay.solana
+```
+### connect(request authorization to connect)
+
+```js
+    async connect() {
+        if(this.publicKey) {
+          this.emit("connect", this.publicKey);
+        } else {
+          this.publicKey = await  window.hyperPay.solana.getAccount()
+          this.emit("connect", this.publicKey);
+        }
+    }
+
+```
+## signTransaction 
+```js
+signTransaction(transaction) { 
+    return this._request({
+      method: "signTransaction",
+      params: {
+        transaction:transaction,
+        message: transaction.serializeMessage().toString("hex")
+      }},true);
+  }
+```
+## signAllTransactions 
+```js
+ signAllTransactions(transactions) {
+    const message = transactions.map(transaction => {
+      return transaction.serializeMessage().toString("hex");
+    });   
+    return this._request({
+      method: "signAllTransactions",
+      params: {
+        transactions:transactions,
+        message: message.join(","),
+      }},true);
+  }
+
+```
+### SOLANA DAppBrowser Methods Supports
+#
+```swift
+enum DAppMethod: String, Decodable, CaseIterable {
+    case signTransaction
+    case signAllTransactions
+    case signMessage
+    case connect
+    case disconnect
+    case requestAccounts
+    case getAccout
+}
+```
+### solana demo 
+[web3.js](https://github.com/solana-labs/solana/tree/master/web3.js)
 # Resources
 
 [website](https://www.hyperpay.tech/)
