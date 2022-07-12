@@ -141,7 +141,7 @@ enum DAppMethod: String, Decodable, CaseIterable {
     case connect
     case disconnect
     case requestAccounts
-    case getAccout
+    case getAccount
 }
 ```
 ### solana demo 
