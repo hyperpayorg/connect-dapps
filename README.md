@@ -40,7 +40,7 @@ This doc will show how to connect the DApps in HyperPay wallet.
 }
 ```
   
- 2.  If DApp wants to display HyperPay  directly. We can provide wallet logo, etc.   
+ 2.  If EVM DApp wants to display HyperPay  directly. We can provide wallet logo, etc.   
 ## How To Connect Wallet 
 ### EVM(Ethereum) Connect
 The Metamask protocol is a universal wallet connection scheme for Ethereum or EVM chains. HyperPay complies with the Metamask protocol by default, and will implant window.ethereum object in the webview. Developers can directly develop follow [MetaMask Documents](https://docs.metamask.io/guide/ethereum-provider.html).
@@ -77,22 +77,33 @@ enum DAppMethod: String, Decodable, CaseIterable {
 ```
 ## Solana DApp Connect 
 You can also refer to [solana-web3](https://solana-labs.github.io/solana-web3.js).
+We use the official wallet-adapter as the connection method [wallet-adapter](https://github.com/solana-labs/wallet-adapter)
+and support npmjs [wallet-adapter-hyperpay](https://www.npmjs.com/package/@solana/wallet-adapter-hyperpay)
+If Solana DApp wants to show HyperPay wallet info in DAppBrowser.
+```js
+ const wallets = useMemo(
+    () => [
+        new HyperPayWalletAdapter(),
+        new PhantomWalletAdapter(),
+        new CoinbaseWalletAdapter(),
+    ],
+);
+```
 ### IsInstalled
 ```js
-    const isHyperPayInstalled = window.isHyperPay && window.hyperPay.solana
+const isHyperPayInstalled = window.isHyperPay && window.hyperPay.solana
 ```
 ### connect(request authorization to connect)
 
 ```js
-    async connect() {
-        if(this.publicKey) {
-          this.emit("connect", this.publicKey);
-        } else {
-          this.publicKey = await  window.hyperPay.solana.getAccount()
-          this.emit("connect", this.publicKey);
-        }
+async connect() {
+    if(this.publicKey) {
+      this.emit("connect", this.publicKey);
+    } else {
+      this.publicKey = await  window.hyperPay.solana.getAccount()
+      this.emit("connect", this.publicKey);
     }
-
+}
 ```
 ## signTransaction 
 ```js
