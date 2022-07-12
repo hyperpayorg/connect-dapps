@@ -1,3 +1,5 @@
+[toc]
+
 # Introduction
 This doc will show how to connect the DApps in HyperPay wallet.
 
