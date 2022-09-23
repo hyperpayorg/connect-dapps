@@ -4,6 +4,8 @@
 This doc will show how to connect the DApps in HyperPay wallet.
 
 # DApp Development
+## How To Connect Aptos DApp in HyperPay
+[Connect Document](https://docs.metamask.io/guide/ethereum-provider.html)
 ## How To Show HyperPay Wallet
   If DApp wants to show HyperPay wallet info in DAppBrowser. There are several ways to do.
   1. If DApp uses [web3-onboard](https://github.com/blocknative/web3-onboard) to integrate the wallet, nothing needs to be done. Hyperpay DAppBrowser can directly display relevant wallet information, as shown in the following picture:
