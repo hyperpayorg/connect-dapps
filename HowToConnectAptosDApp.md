@@ -12,7 +12,6 @@ HyperPay wallet supports Aptos devnet.You can add aptos network in lastest versi
   If DApp wants to show HyperPay wallet info in DAppBrowser. There are several ways to do.
   1. If DApp uses [aptos-wallet-adapter](https://github.com/hippospace/aptos-wallet-adapter) to integrate the wallet, nothing needs to be done. Hyperpay DAppBrowser can directly display relevant wallet information, as shown in the following picture:
   ![aptos-wallet-adapter Demo](assets/1663974540418.jpg)
-  
  aptos-wallet-adapter supports wallets:
   ```js
   {
@@ -65,7 +64,7 @@ If Aptos DApp wants to show HyperPay wallet info in DAppBrowser.
 ```
 ### IsInstalled
 ```js
-const isHyperPayInstalled =  window.hyperPay
+const isHyperPayInstalled =  window.isHyperPay || window.hyperpay
 ```
 ### connect(request authorization to connect)
 
